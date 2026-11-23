@@ -1,0 +1,11 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "tapcrate-site",
+  "compatibility_date": "2026-11-19",
+  "assets": {
+    "directory": ".",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  },
+  "observability": { "enabled": true }
+}
