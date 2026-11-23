@@ -1,0 +1,88 @@
+/*
+VOICE: a small, trustworthy software studio. Calm, factual, like a well-made spec sheet.
+IDEA: a printed product catalog page from a trade supplier: nameplate up top, ruled entries, fine print at the back.
+PICTURE: an iPhone drawn in SVG holding the two real app icons, on a deep teal field.
+COLOUR and TYPE: white ground, ink #14161a, deep teal #0b5d63, rule grey. Libre Caslon Text for titles, Inter for text.
+LAYOUT: full-width teal nameplate band with title and phone; ruled app entries; about and contact; legal pages as a calm single column.
+*/
+:root{color-scheme:light dark;
+  --bg:light-dark(#ffffff,#0d1416);--ink:light-dark(#14161a,#e7eeef);--soft:light-dark(#4a5258,#a9b6b9);
+  --rule:light-dark(#dde2e4,#22302f);--teal:light-dark(#0b5d63,#5fb9bf);--field:#0b5d63;--field-deep:#08474c;
+  --card:light-dark(#f5f8f8,#121d1f)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.6 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:clip}
+a{color:var(--teal);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:3px solid #7fd3d8;outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:"Libre Caslon Text",Georgia,serif;font-weight:400;line-height:1.1;text-wrap:balance;margin:0}
+h1{font-size:clamp(34px,5vw,52px)}h2{font-size:clamp(28px,3.4vw,38px)}h3{font-size:24px}
+p{margin:0 0 1em}
+.wrap{max-width:1240px;margin:0 auto}
+.band{padding:clamp(36px,5vw,72px) max(5vw,16px)}
+
+/* header */
+.top{background:var(--field-deep);color:#fff}
+.top .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 24px;padding:14px max(5vw,16px)}
+.brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-family:"Libre Caslon Text",Georgia,serif;font-size:22px}
+.brand svg{width:30px;height:30px}
+.top nav{display:flex;flex-wrap:wrap;gap:4px 20px}
+.top nav a{color:#d6ecee;text-decoration:none;padding:10px 0;font-size:15px}
+.top nav a:hover,.top nav a[aria-current]{color:#fff;text-decoration:underline}
+
+/* hero */
+.hero{background:var(--field);color:#fff}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(24px,5vw,72px);align-items:center}
+.hero p{color:#d9eeef;font-size:18px;max-width:34em}
+.hero h1{margin-bottom:20px}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;min-height:46px;padding:0 22px;border-radius:999px;font-weight:600;text-decoration:none;font-size:15.5px}
+.btn.light{background:#fff;color:var(--field-deep)}
+.btn.line{border:1.5px solid #9fd2d6;color:#fff}
+.btn.solid{background:var(--teal);color:light-dark(#fff,#0d1416)}
+.phone{width:100%;max-width:340px;height:auto;justify-self:center;display:block}
+@media(prefers-reduced-motion:no-preference){.phone{animation:rise .9s ease-out both}@keyframes rise{from{opacity:0;transform:translateY(18px)}}}
+
+/* apps */
+.apps h2{margin-bottom:8px}
+.lede{color:var(--soft);max-width:40em;margin-bottom:28px}
+.app{display:grid;grid-template-columns:112px minmax(0,1fr);gap:clamp(18px,3vw,36px);padding:32px 0;border-top:1px solid var(--rule)}
+.app:last-child{border-bottom:1px solid var(--rule)}
+.app img{width:112px;height:112px;border-radius:26px;box-shadow:0 6px 18px rgb(0 0 0/.18)}
+.app h3{margin-bottom:4px}
+.status{display:inline-block;font-size:13.5px;font-weight:600;color:var(--teal);margin-bottom:12px}
+.app ul{margin:0 0 18px;padding-left:1.2em;columns:2 260px;column-gap:32px}
+.app li{margin-bottom:6px;break-inside:avoid}
+.links{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;font-size:15px}
+
+/* about + contact */
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,72px)}
+.about{background:var(--card)}
+.facts{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px 20px;font-size:15.5px}
+.facts dt{color:var(--soft)}.facts dd{margin:0}
+
+/* legal pages */
+.doc{max-width:760px;margin:0 auto}
+.doc h1{margin-bottom:8px}
+.doc .meta{color:var(--soft);font-size:15px;margin-bottom:28px}
+.doc h2{font-size:26px;margin:40px 0 12px;padding-top:20px;border-top:1px solid var(--rule)}
+.doc h3{font-size:19px;margin:24px 0 8px}
+.doc ul{padding-left:1.2em;margin:0 0 1em}.doc li{margin-bottom:6px}
+.toc{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:15px;padding:14px 0;border-block:1px solid var(--rule);margin-bottom:8px}
+.note{background:var(--card);border-radius:10px;padding:16px 18px;font-size:15.5px}
+details{border-top:1px solid var(--rule);padding:14px 0}
+summary{cursor:pointer;font-weight:600;min-height:28px}
+details p{margin:10px 0 0}
+
+/* footer */
+footer{border-top:1px solid var(--rule);font-size:14.5px;color:var(--soft)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 24px;padding:24px max(5vw,16px)}
+footer nav{display:flex;flex-wrap:wrap;gap:6px 20px}
+footer a{color:var(--soft)}
+
+@media(max-width:760px){
+  .hero .wrap,.split{grid-template-columns:minmax(0,1fr)}
+  .phone{max-width:240px}
+  .app{grid-template-columns:72px minmax(0,1fr)}
+  .app img{width:72px;height:72px;border-radius:17px}
+}
