@@ -8,3 +8,4 @@ Plain HTML and CSS with no build step. Hosted on Cloudflare (Workers static asse
 - `support.html`, `privacy.html`, `terms.html`
 - `style.css` shared styles
 - `img/` app icons
+- `_headers` security headers (CSP, HSTS, framing, referrer) applied to every page
